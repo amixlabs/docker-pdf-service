@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>PDF - Playground</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    html, body, #app, iframe {
+      height: 100%;
+    }
+    iframe {
+      width: 100%;
+      border: 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <form>
+      <label for="url">URL: </label><input id="url" v-model="form.url" size="180" />
+      <div>
+        <span>Examples: </span>
+        <ul>
+          <li v-for="url in urls" :key="url" @click.prevent="form.url = url"><a href>{{ url }}</a></li>
+        </ul>
+      </div>
+      <ul>
+        <li v-for="(header, index) in form.headers" :key="index">
+          <input v-model="header.name" placeholder="Header Name" size="60" /><input v-model="header.value" placeholder="Header Value" size="120" />
+        </li>
+      </ul>
+      <input type="button" value="Add Headers" @click="addHeader" :disabled="loading" />
+      <input type="submit" @click.prevent="submit" :disabled="loading" />
+      <span v-if="loading">Loading...</span>
+      <input type="button" value="Close" @click="close" v-if="src" />
+    </form>
+    <iframe :src="src" v-if="src" @load="pdfLoad" @error="pdfError"></iframe>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+  <script src="/app.js"></script>
+</body>
+</html>

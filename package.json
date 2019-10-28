@@ -1,0 +1,23 @@
+{
+  "name": "pdf-service",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "repository": "git@bitbucket.org:amixlabs/pdf-service.git",
+  "author": "Edison E. Abreu <dinho.abreu@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node src/server.js",
+    "start:dev": "nodemon src/server.js",
+    "lint": "standard src/**/*.js"
+  },
+  "dependencies": {
+    "debug": "^4.1.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "puppeteer": "~1.11"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.4",
+    "standard": "^14.3.1"
+  }
+}
