@@ -1,8 +1,6 @@
 const { setupProxyIfNeeded } = require('./util')
 const debug = require('debug')('app:pdf')
 
-const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
-
 module.exports = async ({ browser, options }) => {
   const { url, origin, headers, timeout } = options
   const { waitSelector, pdfOptions = {} } = options
