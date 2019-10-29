@@ -1,0 +1,20 @@
+version: '2'
+
+services:
+  app:
+    build:
+      context: .
+      args:
+      - http_proxy
+      - https_proxy
+      - no_proxy
+    restart: always
+    working_dir: /app
+    environment:
+    - http_proxy
+    - https_proxy
+    - no_proxy
+    - TIMEOUT
+    - DEBUG
+    ports:
+    - 3000:3000

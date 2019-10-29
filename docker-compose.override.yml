@@ -1,0 +1,8 @@
+version: '2'
+
+services:
+  app:
+    command: /app/node_modules/.bin/nodemon src/server.js
+    restart: on-failure
+    volumes:
+    - .:/app:delegated
