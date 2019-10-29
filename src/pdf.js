@@ -4,7 +4,8 @@ const debug = require('debug')('app:pdf')
 module.exports = async ({ browser, options }) => {
   const { url, origin, headers, timeout } = options
   const { waitSelector, pdfOptions = {} } = options
-  const page = await browser.newPage()
+  const context = await browser.createIncognitoBrowserContext()
+  const page = await context.newPage()
   page.setRequestInterception(true)
   page.on('request', req => {
     const url = req.url()
