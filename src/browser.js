@@ -4,6 +4,7 @@ const debug = require('debug')('app:browser')
 async function createBrowser () {
   debug('browser launching...')
   const options = {
+    ignoreHTTPSErrors: true,
     headless: true,
     args: ['--no-sandbox', '--lang=pt-BR,pt']
   }
