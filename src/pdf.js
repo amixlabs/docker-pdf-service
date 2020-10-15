@@ -23,6 +23,8 @@ module.exports = async ({ browser, options }) => {
       }
       debug({ overrides })
       req.continue(overrides)
+    } else {
+      req.continue()
     }
   })
   page.on('response', async res => {
@@ -37,7 +39,7 @@ module.exports = async ({ browser, options }) => {
   await setupProxyIfNeeded(page)
   page.setDefaultNavigationTimeout(timeout)
   debug(`goto ${url}`)
-  await page.goto(url, { waitUntil: 'networkidle0' })
+  await page.goto(url, { waitUntil: 'networkidle2' })
   if (waitSelector) {
     // await page.$('body[report-end=true]')
     debug({ waitSelector })
