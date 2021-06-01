@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/amixlabs/docker-pdf-service.svg?branch=master)](https://travis-ci.org/amixlabs/docker-pdf-service)
+[![Release](https://github.com/amixlabs/docker-pdf-service/actions/workflows/release.yml/badge.svg)](https://github.com/amixlabs/docker-pdf-service/actions/workflows/release.yml)
 
 # About this Repo
 
