@@ -2,8 +2,8 @@
   "name": "pdf-service",
   "version": "1.0.1",
   "main": "src/index.js",
-  "repository": "git@bitbucket.org:amixlabs/pdf-service.git",
-  "author": "Edison E. Abreu <dinho.abreu@gmail.com>",
+  "repository": "git@github.com:amixlabs/docker-pdf-service.git",
+  "author": "Edison E. Abreu <edison@amix.com.br>",
   "license": "MIT",
   "scripts": {
     "start": "node src/server.js",
